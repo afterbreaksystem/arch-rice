@@ -105,6 +105,7 @@ sudo pacman -S --needed --noconfirm \
     ttf-iosevka-nerd \
     noto-fonts-emoji \
     noto-fonts-cjk \
+    noto-fonts \
     flatpak \
     cpupower \
     gamemode \
@@ -136,11 +137,9 @@ echo "    ✓ AUR packages installed"
 echo ""
 echo "==> Building hyprselect from GitHub..."
 sudo pacman -S --needed --noconfirm cmake
-git clone https://github.com/noe-flat/hyprselect.git "$CURRENT_HOME/hyprselect"
+git clone https://github.com/jmanc3/hyprselect "$CURRENT_HOME/hyprselect"
 cd "$CURRENT_HOME/hyprselect"
-cmake -B build
-cmake --build build
-sudo cmake --install build
+make
 cd "$DOTDIR"
 echo "    ✓ hyprselect built (source kept in $CURRENT_HOME/hyprselect)"
 
