@@ -109,6 +109,8 @@ sudo pacman -S --needed --noconfirm \
     flatpak \
     cpupower \
     gamemode \
+    mpv \
+    imv \
     linux-headers
 
 echo "    ✓ Main packages installed"
