@@ -137,15 +137,6 @@ yay -S --needed --noconfirm \
 echo "    ✓ AUR packages installed"
 
 echo ""
-echo "==> Building hyprselect from GitHub..."
-sudo pacman -S --needed --noconfirm cmake
-git clone https://github.com/jmanc3/hyprselect "$CURRENT_HOME/hyprselect"
-cd "$CURRENT_HOME/hyprselect"
-make
-cd "$DOTDIR"
-echo "    ✓ hyprselect built (source kept in $CURRENT_HOME/hyprselect)"
-
-echo ""
 echo "==> Installing pywal16..."
 pip install pywal16 --break-system-packages
 export PATH="$CURRENT_HOME/.local/bin:$PATH"
