@@ -111,8 +111,7 @@ sudo pacman -S --needed --noconfirm \
     gamemode \
     mpv \
     imv \
-    linux-headers \
-    rust
+    linux-headers
 
 echo "    ✓ Main packages installed"
 
@@ -136,7 +135,18 @@ yay -S --needed --noconfirm \
 
 echo "    ✓ AUR packages installed"
 
-# ── 5.1 Build walrs from source ──────────────────────────────
+# ── 5.1 Install Rust via rustup ──────────────────────────────
+echo ""
+echo "==> Installing Rust via rustup..."
+if ! command -v cargo &>/dev/null; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+    source "$CURRENT_HOME/.cargo/env"
+    echo "    2713 Rust installed"
+else
+    echo "    2713 Rust already installed"
+fi
+
+# ── 5.2 Build walrs from source ──────────────────────────────
 echo ""
 echo "==> Building walrs from source..."
 if ! command -v walrs &>/dev/null; then
