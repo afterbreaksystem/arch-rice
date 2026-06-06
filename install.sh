@@ -126,7 +126,6 @@ yay -S --needed --noconfirm \
     ttf-all-the-icons \
     ttf-material-design-icons-desktop-git \
     ttf-material-design-icons-git \
-    ttf-monocraft-git \
     mullvad-vpn-bin \
     pfetch \
     peaclock \
