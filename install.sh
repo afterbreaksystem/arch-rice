@@ -111,7 +111,8 @@ sudo pacman -S --needed --noconfirm \
     gamemode \
     mpv \
     imv \
-    linux-headers
+    linux-headers \
+    rust
 
 echo "    ✓ Main packages installed"
 
@@ -120,7 +121,6 @@ echo ""
 echo "==> [5/6] AUR packages..."
 yay -S --needed --noconfirm \
     awww \
-    walrs \
     bibata-cursor-theme-bin \
     wlogout \
     nvibrant-cli \
@@ -135,6 +135,21 @@ yay -S --needed --noconfirm \
     apple-fonts
 
 echo "    ✓ AUR packages installed"
+
+# ── 5.1 Build walrs from source ──────────────────────────────
+echo ""
+echo "==> Building walrs from source..."
+if ! command -v walrs &>/dev/null; then
+    git clone https://github.com/pixel2175/walrs.git /tmp/walrs
+    cd /tmp/walrs
+    cargo build --release
+    sudo cp target/release/walrs /usr/local/bin/walrs
+    cd "$DOTDIR"
+    rm -rf /tmp/walrs
+    echo "    ✓ walrs built and installed"
+else
+    echo "    ✓ walrs already installed"
+fi
 
 echo ""
 echo "==> Installing pywal16..."
