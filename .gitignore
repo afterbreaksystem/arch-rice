@@ -1,0 +1,4 @@
+# Generated machine-local state
+configs/fish/fish_variables
+configs/fish/conf.d/rustup.fish
+configs/hypr/wallpapers/lockscreen.jpg

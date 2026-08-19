@@ -73,7 +73,7 @@ sudo pacman -S --needed --noconfirm \
     waybar \
     swaync \
     rofi \
-    kitty \
+    foot \
     sddm \
     pipewire-alsa \
     pipewire-pulse \
@@ -176,7 +176,7 @@ RICE_CONFIGS=(
     waybar
     swaync
     rofi
-    kitty
+    foot
     nvim
     fish
     wlogout
